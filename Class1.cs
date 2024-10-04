@@ -50,24 +50,21 @@ namespace MortgagePlugin1
                     // Ensure all required fields are present
                     if (entity.Contains("contoso_mortgageterm") && entity.Contains("contoso_mortgageamount") && entity.Contains("contoso_riskscores") && entity.Contains("contoso_salestaxrate"))
                     {
+                        int baseApr = 20;
+                        int margin = 20;
                         int durationMonths = (int)entity["contoso_mortgageterm"];
                         Money mortgageAmount = entity.GetAttributeValue<Money>("contoso_mortgageamount");
                         decimal Pv = mortgageAmount.Value;
                         int riskScoreValue = entity.GetAttributeValue<int>("contoso_riskscores"); // Use int for risk score
+                        decimal riskScore = (decimal)Math.Log10(riskScoreValue); // Convert riskScoreValue to decimal and use Log10
                         decimal salesTaxRate = entity.GetAttributeValue<decimal>("contoso_salestaxrate");
 
                         DateTime approvalStartDate = DateTime.Now;
 
                         tracingService.Trace("Duration in months: {0}", durationMonths);
-
-                        // APR Calculation
-                        int baseApr = 20;
-                        decimal riskScore = (decimal)Math.Log10(riskScoreValue); // Convert riskScoreValue to decimal and use Log10
-                        int margin = 20;
                         decimal finalApr = baseApr + margin + riskScore + salesTaxRate;
-
+                        // APR Calculation
                         decimal monthlyInterestRate = finalApr / (100 * 12);
-
                         decimal monthlyPayment = (Pv * monthlyInterestRate) / (1 - (decimal)Math.Pow((double)(1 + monthlyInterestRate), -durationMonths));
 
                         // Create monthly payment records
