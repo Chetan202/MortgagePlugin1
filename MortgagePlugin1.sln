@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAssigned1", "..\TaskAss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityLibraryTaskAssigned1", "..\ActivityLibraryTaskAssigned1\ActivityLibraryTaskAssigned1.csproj", "{261EF807-8C59-4FC3-8DF5-FF99B43659B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTaskAssigned1", "..\ConsoleAppTaskAssigned1\ConsoleAppTaskAssigned1.csproj", "{F51217E7-9CB2-4F1C-B0EC-37201C9D46FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{261EF807-8C59-4FC3-8DF5-FF99B43659B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{261EF807-8C59-4FC3-8DF5-FF99B43659B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{261EF807-8C59-4FC3-8DF5-FF99B43659B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F51217E7-9CB2-4F1C-B0EC-37201C9D46FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F51217E7-9CB2-4F1C-B0EC-37201C9D46FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F51217E7-9CB2-4F1C-B0EC-37201C9D46FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F51217E7-9CB2-4F1C-B0EC-37201C9D46FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
